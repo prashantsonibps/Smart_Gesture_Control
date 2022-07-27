@@ -1,0 +1,35 @@
+import pyfirmata
+
+comport='COM8'
+
+board=pyfirmata.Arduino(comport)
+
+led_1=board.get_pin('d:13:o')
+led_2=board.get_pin('d:12:o')
+
+
+def led(total):
+    if total==0:
+        led_1.write(1)
+        led_2.write(1)
+        
+    elif total==1:
+        led_1.write(0)
+        led_2.write(1)
+        
+    elif total==2:
+        led_1.write(1)
+        led_2.write(1)
+        
+    elif total==3:
+        led_1.write(0)
+        led_2.write(0)
+        
+    elif total==4:
+        led_1.write(1)
+        led_2.write(1)
+        
+    elif total==5:
+        led_1.write(1)
+        led_2.write(0)
+        
